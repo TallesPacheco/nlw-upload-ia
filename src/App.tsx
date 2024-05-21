@@ -1,10 +1,11 @@
-import { FileVideo, Upload, Wand2 } from 'lucide-react'/* eslint-disable no-mixed-spaces-and-tabs */
+import {  Wand2 } from 'lucide-react'/* eslint-disable no-mixed-spaces-and-tabs */
 import { Textarea } from './components/ui/textarea'
 import { Separator } from './components/ui/separator'
 import { Label } from './components/ui/label'
 import { Button } from './components/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select'
 import { Slider } from './components/ui/slider'
+import { VideoInputForm } from './components/video-input-form'
 
 
 export function App() {
@@ -31,28 +32,9 @@ export function App() {
 			</div>
 
 			<aside className="w-80 space-y-6">
-				<form action="space-y-6">
-					<label htmlFor="video" 
-						   className="border w-full flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5" >
-						<FileVideo className="w-4 h-4" />
-						Selecione um video
-					</label>
 
-					<input type="file" name="video" id="video" accept="video/mp4" className="sr-only"/>	
-
-					<Separator />
-
-					<div className='space-y-1'>
-						<Label htmlFor="transcription_prompt">Prompt de transcrição</Label>
-						<Textarea id="transcription_prompt" className='min-h-20 leading-relaxed' placeholder='Inclua palavras-chaves mencionadas no video separadas por virgula (,)' />
-					</div>
-
-					<Button type="submit" className='w-full'>
-						Carregar Vídeo
-						<Upload className='w-4 h-4 ml-2' />
-					</Button>
-				</form>
-
+				<VideoInputForm />
+				
 				<Separator />
 
 				<form className='space-y-6'>
@@ -67,7 +49,7 @@ export function App() {
 								<SelectItem value='title'>Título do YouTube</SelectItem>
 								<SelectItem value='description'>Descrição do YouTube</SelectItem>
 							</SelectContent>
-						</Select>
+						</Select> 
 					</div>
 
 					<div className='spce-y-2'>
